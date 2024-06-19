@@ -1,0 +1,184 @@
+/* Reset styles */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* App container */
+  .app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #343541;
+    overflow: hidden; /* Prevents body overflow */
+  }
+  
+  /* Main app layout */
+  .app {
+    display: flex;
+    flex-direction: column;
+    background-color: #343541;
+    color: white;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar styles */
+  .side-bar {
+    background-color: #202123;
+    width: 244px;
+    height: calc(100vh - 65px);
+    position: fixed;
+    top: 65px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  
+  .side-bar button {
+    position: sticky;
+    top: 10px;
+    border: solid 0.5px rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+  }
+  
+
+  .nav {
+    padding: 10px;
+  }
+  
+
+  .main {
+    padding: 10px; 
+    width: 800px;
+    flex: 1;
+    overflow-y: scroll;
+    position: relative;
+    left: 290px;
+    top: 60px;
+  }
+  
+ 
+  .feed {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .feed .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .feed .system {
+    background-color: #3a3c4b;
+  }
+  
+  .feed .user {
+    background-color: #494b5a;
+  }
+  
+  .feed .assistant {
+    background-color: #596579;
+  }
+  
+
+  .input-container {
+    position: fixed;
+    bottom: 0;
+    left: 830px;
+    transform: translateX(-50%);
+    width: calc(100% - 244px);
+    max-width: 900px;
+    background-color: #494b5a;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+
+  input {
+    flex: 1;
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem #071f2a;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+ 
+  .submit-button {
+    font-size: x-large;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 1024px) {
+    .side-bar {
+        display: none; 
+      }
+  
+    .main {
+      padding: 10px;
+        flex: 1;
+        overflow-y: scroll;
+        position: relative;
+        left: 10px;
+        max-width: 300px;
+  
+       /* Reduce padding in main section */
+    }
+     
+  .input-container {
+    left: 50%; 
+    transform: translateX(-50%);
+    width: calc(100% - 200px); 
+    max-width: 100%;
+  }
+
+  }
+  
+  @media (max-width: 768px) {
+    .side-bar {
+      display: none;
+    }
+  
+    .main {
+      margin-left: 0; 
+      padding: 10px; 
+    
+      flex: 1;
+      overflow-y: scroll;
+      position: relative;
+
+    }
+  
+    .input-container {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  

@@ -1,0 +1,168 @@
+
+
+.navbar {
+  background: #071f2a;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0 20px; /* Ensure padding to control spacing */
+  position: fixed; /* Keep the navbar fixed at the top */
+  top: 0;
+  left: 0;
+  z-index: 999; /* Ensure the navbar is above other content */
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 5px;
+  left: 142px;
+}
+
+.logo-image {
+  height: 40px; /* Default height for desktop */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Make logo responsive */
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 65px; /* Ensure consistent height with navbar */
+}
+
+.nav-links {
+  color: white;
+  font-size:medium;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+
+}
+
+.nav-links:hover {
+  color: #40c4de;
+  transition: all 0.2s ease-out;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 65px;
+    
+    right: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #071f2a;
+    right: -40px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    position: relative;
+    top: -260px;
+    
+    display: table;
+  }
+
+  .nav-links:hover {
+    color: #40c4de;
+  }
+
+  .navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #1888ff;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #1888ff;
+    transition: 250ms;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+/* Additional media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar-logo {
+    left: 20px; /* Adjust left positioning for smaller screens */
+  }
+
+  .logo-image {
+    height: 35px; /* Smaller height for tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-logo {
+    left: 10px; /* Adjust left positioning for mobile devices */
+  }
+
+  .logo-image {
+    height: 30px; /* Smaller height for mobile devices */
+  }
+}
+
+/* Add padding to the main content to avoid hiding it behind the fixed navbar */
+.main-content {
+  padding-top: 65px; /* Same height as the navbar */
+}
